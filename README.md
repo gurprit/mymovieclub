@@ -1,1 +1,3 @@
 # myMovieClub
+
+npm run dev

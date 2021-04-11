@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import * as db from "../firestore";
 import Error from "./shared/Error";
 
@@ -25,24 +25,28 @@ function CreateItem({ user, listId }) {
     }
 
   }
+  
+//  useEffect(() => {
+//    if (movie) return movie;
+//    if (!movie) return getMovie();
+//  }, [movie])
 
 const getMovie = async (event) => {
   setMovie(event.target.value);
-  await fetch(`https://www.omdbapi.com/?apikey=eafe3ca6&t=${movie}`)
-  .then(response => {
-    if(response.ok) {
-      console.log("SUCCESSS")
-      return response.json();     
-    } else {
-      console.log("FAIL")
-    }
-  })
+  // if 2 or more characters are input
+  if (movie.length >= 2) {
+    console.log(movie);
+    await fetch(`https://www.omdbapi.com/?apikey=eafe3ca6&t=${movie}`)
+    .then(response => response.json())
+    
+    .then(data => {
+      setMovieData(data);
+      console.log(movieData)/// <== HOW DO I GET data
+    })
+  }
 
 
-  .then(data => {
-    setMovieData({data});
-    console.log(movieData)/// <== HOW DO I GET data
-  })
+
 
 };
 
@@ -59,7 +63,6 @@ const getMovie = async (event) => {
           value={movie}
           type="text"
       />      
-
 
 
         <input

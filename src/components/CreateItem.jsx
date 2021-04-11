@@ -29,18 +29,19 @@ function CreateItem({ user, listId }) {
 const getMovie = async (event) => {
   setMovie(event.target.value);
   await fetch(`https://www.omdbapi.com/?apikey=eafe3ca6&t=${movie}`)
-  .then(response => response.json())
+  .then(response => {
+    if(response.ok) {
+      console.log("SUCCESSS")
+      return response.json();     
+    } else {
+      console.log("FAIL")
+    }
+  })
+
+
   .then(data => {
     setMovieData({data});
     console.log(movieData)/// <== HOW DO I GET data
-
-    return (
-      <div className="movieThing">
-        {movieData.map((movieThing) => (/// <== HOW DO I GET data
-          <div className="user">{movieThing}</div>
-        ))}
-      </div>
-    );
   })
 
 };
@@ -57,8 +58,10 @@ const getMovie = async (event) => {
           onChange={getMovie}
           value={movie}
           type="text"
-        />
- 
+      />      
+
+
+
         <input
           className="flex-grow w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 mr-4 mb-4 sm:mb-0"
           name="link"

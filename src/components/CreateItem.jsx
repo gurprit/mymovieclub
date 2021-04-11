@@ -6,6 +6,7 @@ function CreateItem({ user, listId }) {
   const [name, setName] = React.useState('');
   const [link, setLink] = React.useState('');
   const [movie, setMovie] = React.useState([]);
+  const [movieData, setMovieData] = React.useState([]);
   const [error, setError] = React.useState('');
   const [submitting, setSubmitting] = React.useState(false);
 
@@ -30,11 +31,12 @@ const getMovie = async (event) => {
   await fetch(`https://www.omdbapi.com/?apikey=eafe3ca6&t=${movie}`)
   .then(response => response.json())
   .then(data => {
-    console.log(data)/// <== HOW DO I GET data
+    setMovieData({data});
+    console.log(movieData)/// <== HOW DO I GET data
 
     return (
       <div className="movieThing">
-        {data.map((movieThing) => (/// <== HERE!
+        {movieData.map((movieThing) => (/// <== HOW DO I GET data
           <div className="user">{movieThing}</div>
         ))}
       </div>
@@ -56,7 +58,7 @@ const getMovie = async (event) => {
           value={movie}
           type="text"
         />
-        
+ 
         <input
           className="flex-grow w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-green-500 text-base px-4 py-2 mr-4 mb-4 sm:mb-0"
           name="link"

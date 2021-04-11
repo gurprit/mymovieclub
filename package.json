@@ -6,11 +6,14 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "@pika/react": "^16.13.1",
     "@pika/react-dom": "^16.13.1",
     "antd": "^4.15.1",
     "firebase": "^7.16.1",
+    "react": "^17.0.2",
     "react-autocomplete": "^1.8.1",
+    "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "react-use-clipboard": "^1.0.0",
     "swr": "^0.2.3"

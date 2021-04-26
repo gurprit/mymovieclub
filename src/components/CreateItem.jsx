@@ -42,6 +42,8 @@ const getMovie = async (event) => {
     .then(data => {
       setMovieData(data);
       console.log(movieData)/// <== HOW DO I GET data
+
+      /// then make a componant to display the data from the response  
     })
   }
 
@@ -83,6 +85,7 @@ const getMovie = async (event) => {
         </button>
       </form>
       <Error message={error} /> 
+
     </>
   );
 }

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link href="/dist/style.css" rel="stylesheet">
     <title>MyMovieClub.co.uk</title>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@100;400&display=swap');
       body,
       html {
         height: 100%;
@@ -14,6 +14,50 @@
       }
       #root {
         height: 100%;
+      }
+
+      .primary-font {
+          font-family: 'Pacifico', cursive;
+          font-size: clamp(100%, 1rem + 12vw, 44px);
+          color: #000;
+          
+      }
+
+      .primary-font__header {
+          font-family: 'Pacifico', cursive;
+          font-size: clamp(100%, 1rem + 12vw, 44px);
+          color: #FFF;
+      }
+
+      .secondary-font {
+          font-family: 'Roboto', sans-serif;
+          font-size: clamp(100%, 1rem + 12vw, 25px);
+          font-weight: 100;
+      }
+
+      .secondary-font__header {
+          font-family: 'Roboto', sans-serif;
+          font-size: 14px;
+          font-weight: 100;
+      }
+
+      .movie-info-tile {
+          padding: 30px 0;
+          display: flex;
+      }
+      .movie-info-tile__col1 {
+          margin: 0 20px 0 0;
+      }
+      .movie-info-tile__col2 {
+          text-align: left;
+      }
+
+      .list-page-header__header {
+          font-family: 'Roboto', sans-serif;
+          font-size: 42px;
+          padding: 60px 0;
+          backdrop-filter: blur(3px);
+          color: #FFF;
       }
     </style>
   </head>

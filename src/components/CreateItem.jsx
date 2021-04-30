@@ -74,13 +74,13 @@ useEffect(() => {
 
       <div className="movie-info-tile">
         <div className="movie-info-tile__col1">
-          <img src={movieData?.Poster} alt={movieData?.Title}></img>
+          <img src={movieData.Poster} alt={movieData.Title}></img>
         </div>
         <div className="movie-info-tile__col2">
-          <h1>{movieData?.Title}</h1>
-          <p>{movieData?.Year}</p>
-          <p>{movieData?.Director}</p>
-          <p>{movieData?.Plot}</p>
+          <h1>{movieData.Title}</h1>
+          <p>{movieData.Year}</p>
+          <p>{movieData.Director}</p>
+          <p>{movieData.Plot}</p>
         </div>
       </div>
 

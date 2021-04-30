@@ -57,7 +57,6 @@ function UserListCount({ count }) {
 
 function ListItem({ list }) {
   const { id, name, description, image, users } = list
-  
   return (
     <div className="lg:w-1/3 sm:w-1/2 p-4 masterList__item">
       {" "}

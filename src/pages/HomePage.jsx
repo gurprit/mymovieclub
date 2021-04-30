@@ -9,8 +9,11 @@ function HomePage() {
 
   return (
     <Layout>
-      <CreateList user={user} />
+      <h1 className="text-2xl font-medium title-font mb-4 text-white tracking-widest">
+        WELCOME, {user.displayName.toUpperCase()}!
+      </h1>
       <Lists user={user} />
+      <CreateList user={user} />
     </Layout>
   );
 }

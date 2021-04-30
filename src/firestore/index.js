@@ -96,12 +96,11 @@ export async function getList(listId) {
 
 export async function createListItem({ user, listId , item }) {
     try {
-        //const response = await fetch(`https://shot.screenshotapi.net/screenshot?token=5JFDS6Q-ZXC4V87-HWHHHBQ-FNBR7F7&url=${item.link}&output=image&file_type=png`);
-        //const { screenshot } = await response.json();
         db.collection('lists').doc(listId).collection('items').add({
-            name: item.name, 
-            link: item.link, 
-            image: null, 
+            title: item.movieTitle, 
+            userReview: item.userReview, 
+            userRating: item.userRating, 
+            image: item.moviePoster, 
             created: firebase.firestore.FieldValue.serverTimestamp(),
             author: {
                 id: user.uid, 

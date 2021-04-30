@@ -32,7 +32,7 @@ function ItemList({ listId }) {
 }
 
 function Item({ listId, item }) {
-  const { id, name, link, image, author, created } = item;
+  const { id, title, userReview, userRating, image, author, created } = item;
   const date = created ? created.toDate().toLocaleDateString() : null;
 
   function handleDeleteItem() {
@@ -42,19 +42,21 @@ function Item({ listId, item }) {
   }
 
   return (
-    <div className="xl:w-1/4 md:w-1/2 p-4">
+    <div className="xl:w-1/4 md:w-1/4 p-4">
       <div className="bg-gray-800 p-6 rounded-lg">
-        <a href={link} target="_blank" rel="noopener noreferer">
+
           <img
-            className="h-40 rounded w-full object-cover object-center mb-6"
-            src={defaultImage}
-            alt={name}
+            className="rounded w-full object-center mb-6"
+            src={image}
+            alt={title}
           />
-        </a>
-        <h3 className="tracking-widest text-green-500 text-xs font-medium title-font">
-          {author.username}
-        </h3>
-        <h2 className="text-lg text-white font-medium title-font mb-4">{name}</h2>
+        <h2 className="text-lg text-white font-medium title-font mb-1">{title}</h2>
+        <h3 className="tracking-widest text-green-500 text-xs font-medium title-font">{author.username}</h3>
+        <h3 className="ttext-white font-medium mb-4 text-xs">{userReview}</h3>
+        <h3 className="ttext-white font-medium mb-4 text-xs">{userRating}/10</h3>
+
+    
+
         <div className="flex items-center justify-between">
           <span className="leading-relaxed text-base">Posted {date}</span>
           <button onClick={handleDeleteItem} className="inline-flex text-white bg-red-500 border-0 py-1 px-2 focus:outline-none hover:bg-red-600 rounded text-lg">

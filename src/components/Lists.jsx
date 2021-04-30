@@ -16,7 +16,6 @@ function UserLists({ user }) {
 
   return (
     <>
-      <UserListCount count={lists.length} />
       <section className="text-gray-500 bg-gray-900 body-font">
         <div className="container px-5 py-5 mx-auto">
           <div className="flex flex-wrap -m-4">
@@ -30,30 +29,6 @@ function UserLists({ user }) {
   );
 }
 
-function UserListCount({ count }) {
-  return (
-    <div className="container px-5 py-5 mb-6 bg-gray-800 rounded mx-auto flex justify-center text-center">
-      <div className="p-4 sm:w-1/4 w-1/2">
-        
-        <svg
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          className="text-green-500 w-12 h-12 mb-3 inline-block"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-        </svg>
-        <h2 className="title-font font-medium sm:text-4xl text-3xl text-white">
-          {count}
-        </h2>
-        <p className="leading-relaxed">Movie Club</p>
-      </div>
-    </div>
-  );
-}
 
 function ListItem({ list }) {
   const { id, name, description, image, users } = list

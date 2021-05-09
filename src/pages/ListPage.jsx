@@ -33,25 +33,17 @@ function ListPage({ location }) {
     backgroundSize: 'cover',
     width: '100%',
     textAlign: 'center',
+    padding: '30px'
   }
 
   return (
     <Layout>
       <div style={listPageHeader} className="list-page-header">
-        <h1 className="list-page-header__header">{list.name}</h1>
-
-      </div>
-      <p className="mt-3 mb-8 leading-relaxed text-center">{list.description}</p>
-
-      <ItemList listId={listId} />
-      <section className="text-gray-500 bg-gray-900 body-font">
-        <div className="container mx-auto flex flex-col px-5 py-4 justify-center items-center">
-          
-          <div className="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
-
-            
-            <CreateItem user={user} listId={listId}/>
-            <div className="flex text-gray-300">
+        <h1 className="list-page-header__header">{list.name}
+        <span className="leading-relaxed text-center list-page-header__desc">{list.description}</span>
+        </h1>
+        
+        <div className="flex text-gray-300 items-center">
               <button onClick={setCopied} className="bg-orange-500 inline-flex py-3 px-5 rounded-lg items-center hover:bg-orange-600 hover:text-white focus:outline-none">
                 <span className="flex items-start flex-col leading-none">
                   <span className="text-xs text-gray-200 mb-1">
@@ -72,9 +64,21 @@ function ListPage({ location }) {
                 </span>
               </Link>
             </div>
+
+      </div>
+
+
+
+      <section className="text-gray-500 bg-gray-900 body-font">
+        <div className="container mx-auto flex flex-col px-5 py-4 justify-center items-center">
+            <div className="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
+              <CreateItem user={user} listId={listId}/>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+      <ItemList listId={listId} />
+
       
     </Layout>
   );

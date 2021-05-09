@@ -94,13 +94,14 @@ export async function getList(listId) {
     }
 }
 
-export async function createListItem({ user, listId , item }) {
+export async function createListItem({ user, listId , allMovieData }) {
+    const { title, poster, review, rating } = allMovieData 
     try {
         db.collection('lists').doc(listId).collection('items').add({
-            title: item.movieTitle, 
-            userReview: item.userReview, 
-            userRating: item.userRating, 
-            image: item.moviePoster, 
+            title: title, 
+            image: poster, 
+            review: review,
+            rating: rating,
             created: firebase.firestore.FieldValue.serverTimestamp(),
             author: {
                 id: user.uid, 

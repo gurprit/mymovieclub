@@ -33,7 +33,7 @@ function UserLists({ user }) {
 function ListItem({ list }) {
   const { id, name, description, image, users } = list
   return (
-    <div className="lg:w-1/3 sm:w-1/2 p-4 masterList__item">
+    <div className="lg:w-1/3 sm:w-1/2 p-4 masterList__item movie-club-item">
       {" "}
       <Link to={`/${id}`}>
         <div className="flex relative">
@@ -42,16 +42,16 @@ function ListItem({ list }) {
             className="absolute inset-0 w-full h-full object-cover object-center"
             src={image || defaultImage}
           />
-          <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-50 ">
-            <ul className="list-disc">
-              <li className="tracking-widest text-sm title-font font-medium text-orange-500 mb-1">
+          <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800">
+
+            <h1 className="title-font text-lg font-medium text-white mb-3 bg-gray-900 p-2">
+              {name}
+            </h1>
+            <ul className="list-none ">
+              <li className="tracking-widest text-sm title-font font-medium text-white-500 mb-1">
                 {users[0].name} {users.length > 1 && `+ ${users.length - 1} others`}
               </li>
             </ul>
-            <h1 className="title-font text-lg font-medium text-white mb-3">
-              {name}
-            </h1>
-            <p className="leading-relaxed">{description}</p>
           </div>
         </div>
       </Link>

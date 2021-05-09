@@ -1,9 +1,10 @@
 import React from "react";
 import * as db from "../firestore";
-import defaultImage from "../../static/default.svg";
+//import defaultImage from "../../static/default.svg";
 
 function ItemList({ listId }) {
   const [items, setItems] = React.useState([]);
+
 
   React.useEffect(() => {
     return db.subscribeToListItems(listId, {
@@ -14,8 +15,8 @@ function ItemList({ listId }) {
         }))
         setItems(data);
       }
-    })
-  }, [listId])
+      })
+    }, [listId])
 
 
   return (
@@ -32,7 +33,7 @@ function ItemList({ listId }) {
 }
 
 function Item({ listId, item }) {
-  const { id, title, userReview, userRating, image, author, created } = item;
+  const { id, title, review, rating, image, author, created } = item;
   const date = created ? created.toDate().toLocaleDateString() : null;
 
   function handleDeleteItem() {
@@ -52,10 +53,9 @@ function Item({ listId, item }) {
           />
         <h2 className="text-lg text-white font-medium title-font mb-1">{title}</h2>
         <h3 className="tracking-widest text-green-500 text-xs font-medium title-font">{author.username}</h3>
-        <h3 className="ttext-white font-medium mb-4 text-xs">{userReview}</h3>
-        <h3 className="ttext-white font-medium mb-4 text-xs">{userRating}/10</h3>
+        <h3 className="ttext-white font-medium mb-4 text-xs">{review}</h3>
+        <h3 className="ttext-white font-medium mb-4 text-xs">{rating}/10</h3>
 
-    
 
         <div className="flex items-center justify-between">
           <span className="leading-relaxed text-base">Posted {date}</span>

@@ -74,9 +74,9 @@ function CreateList({ user }) {
         onClick={handleCreateList}
         disabled={submitting} 
         className="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">
-          {submitting ? "Creating ..." : "Create List"}
+          {submitting ? "Creating ..." : "Create Club"}
         </button>
-        <p className="text-xs text-gray-600 mt-3">*List name required</p>
+        <p className="text-xs text-gray-600 mt-3">*Club name required</p>
       </div>
     </div>
   );

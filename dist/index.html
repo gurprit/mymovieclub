@@ -6,7 +6,9 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <title>MyMovieClub.co.uk</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@100;400&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@100;400&display=swap|');
+      @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,400;1,600&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
       body,
       html {
         height: 100%;
@@ -41,7 +43,12 @@
           font-size: 14px;
           font-weight: 100;
       }
-
+      .movie-info-review {
+        display: none;
+      } 
+      .movie-info-review.show {
+        display: block;
+      } 
       .movie-info-tile {
           padding: 30px 0;
           display: flex;
@@ -54,13 +61,28 @@
       }
 
       .list-page-header__header {
-          font-family: 'Roboto', sans-serif;
-          font-size: 42px;
-          padding: 60px 0;
-          backdrop-filter: blur(3px);
-          color: #FFF;
+        font-family: 'Hammersmith One', sans-serif;
+        font-size: 50px;
+        padding: 40px 0;
+        margin: 30px;
+        color: #FFF;
+        text-transform: uppercase;
+      }
+      .list-page-header__desc {
+        font-family: 'Lora', serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 16px;
+        display: block;
+        text-transform: lowercase;
       }
       @media only screen and (max-width: 600px) {
+      .list-page-header__header {
+        font-size: 24px;
+        padding: 10px 18px;
+        width: 100%;
+        margin: 0 0 30px;
+      }
         .movie-club-item {
           width: 100%;
         }
@@ -70,6 +92,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/_assets/index.700c1e61.js"></script>
+    <script src="/_assets/index.edbe3126.js"></script>
   </body>
 </html>

@@ -9,7 +9,7 @@ function HomePage() {
 
   return (
     <Layout>
-      <h1 className="text-2xl font-medium title-font mb-4 text-white tracking-widest">
+      <h1 className="text-2xl font-medium title-font mb-4 text-white tracking-widest text-center">
         WELCOME, {user.displayName.toUpperCase()}!
       </h1>
       <Lists user={user} />

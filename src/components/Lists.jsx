@@ -47,8 +47,8 @@ function ListItem({ list }) {
             <h1 className="title-font text-lg font-medium text-white mb-3 bg-gray-900 p-2">
               {name}
             </h1>
-            <ul className="list-none ">
-              <li className="tracking-widest text-sm title-font font-medium text-white-500 mb-1">
+            <ul className="list-none bg-gray-600 p-2">
+              <li className="tracking-widest text-sm title-font font-medium text-white-500">
                 {users[0].name} {users.length > 1 && `+ ${users.length - 1} others`}
               </li>
             </ul>

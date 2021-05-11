@@ -16,8 +16,8 @@ function CreateItem({ user, listId }) {
       event.preventDefault();
       setSubmitting(true)
       const allMovieData = {
-        title: movieData?.Title,
-        poster: movieData?.Poster,
+        title: movieData.Title,
+        poster: movieData.Poster,
         review: userReview,
         rating: userRating
       }
@@ -40,7 +40,7 @@ const handleMovieTitleSearch = (e) => {
 };
 
 const fetchMyMovie = (movie) => {
-    if (movie?.length >= 2) {
+    if (movie.length >= 2) {
       fetch(`https://www.omdbapi.com/?apikey=eafe3ca6&t=${movie}`)
       .then(response => response.json())
       .then(data => {
